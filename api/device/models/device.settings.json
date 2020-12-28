@@ -40,8 +40,8 @@
       "type": "richtext"
     },
     "room": {
-      "model": "room",
-      "via": "devices"
+      "via": "devices",
+      "model": "room"
     }
   }
 }
