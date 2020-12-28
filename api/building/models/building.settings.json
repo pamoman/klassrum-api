@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buildings",
+  "info": {
+    "name": "Building"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "rooms": {
+      "via": "building",
+      "collection": "room"
+    }
+  }
+}

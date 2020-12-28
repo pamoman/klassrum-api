@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "name": "Device",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "purchased": {
+      "type": "date"
+    },
+    "warranty": {
+      "type": "integer",
+      "default": 12
+    },
+    "brand": {
+      "model": "brand",
+      "via": "devices"
+    },
+    "category": {
+      "model": "category",
+      "via": "devices"
+    },
+    "serial": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "message": {
+      "type": "richtext"
+    }
+  }
+}

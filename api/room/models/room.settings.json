@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rooms",
+  "info": {
+    "name": "Room",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "Level_0",
+        "Level_1",
+        "Level_2",
+        "Level_3"
+      ]
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "building": {
+      "model": "building",
+      "via": "rooms"
+    },
+    "type": {
+      "model": "type",
+      "via": "rooms"
+    },
+    "devices": {
+      "collection": "device"
+    }
+  }
+}
