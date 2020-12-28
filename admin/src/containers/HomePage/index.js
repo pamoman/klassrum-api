@@ -15,12 +15,12 @@ import SocialLink from './SocialLink';
 
 const SOCIAL_LINKS = [
   {
-    name: 'GitHub App',
-    link: 'https://github.com/pamoman/finance-app',
+    name: 'GitHub - Klassrum App',
+    link: 'https://github.com/pamoman/klassrum',
   },
   {
-    name: 'GitHub API',
-    link: 'https://github.com/pamoman/finance-api',
+    name: 'GitHub - Klassrum API',
+    link: 'https://github.com/pamoman/klassrum-api',
   },
 ];
 
