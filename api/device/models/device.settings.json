@@ -11,24 +11,8 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "model": {
-      "type": "string",
-      "required": true
-    },
     "purchased": {
       "type": "date"
-    },
-    "warranty": {
-      "type": "integer",
-      "default": 12
-    },
-    "brand": {
-      "model": "brand",
-      "via": "devices"
-    },
-    "category": {
-      "model": "category",
-      "via": "devices"
     },
     "serial": {
       "type": "string"
@@ -40,8 +24,12 @@
       "type": "richtext"
     },
     "room": {
-      "via": "devices",
-      "model": "room"
+      "model": "room",
+      "via": "devices"
+    },
+    "model": {
+      "model": "model",
+      "via": "devices"
     }
   }
 }

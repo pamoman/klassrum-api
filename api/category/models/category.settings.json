@@ -14,9 +14,9 @@
       "type": "string",
       "required": true
     },
-    "devices": {
+    "models": {
       "via": "category",
-      "collection": "device"
+      "collection": "model"
     }
   }
 }

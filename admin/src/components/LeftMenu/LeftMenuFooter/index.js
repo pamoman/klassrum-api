@@ -13,16 +13,17 @@ function LeftMenuFooter({ version }) {
   // PROJECT_TYPE is an env variable defined in the webpack config
   // eslint-disable-next-line no-undef
   const projectType = PROJECT_TYPE;
+  const url = "https://github.com/pamoman/klassrum-api";
 
   return (
     <Wrapper>
       <div className="poweredBy">
-        <a key="website" href="https://strapi.io" target="_blank" rel="noopener noreferrer">
+        <a key="website" href={url} target="_blank" rel="noopener noreferrer">
           PamoSystems
         </a>
         &nbsp;
         <a
-          href={`https://github.com/strapi/strapi/releases/tag/v${version}`}
+          href={url}
           key="github"
           target="_blank"
           rel="noopener noreferrer"
@@ -30,7 +31,7 @@ function LeftMenuFooter({ version }) {
           v{version}
         </a>
         &nbsp;
-        <a href="https://strapi.io" target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           — {projectType} Edition
         </a>
       </div>

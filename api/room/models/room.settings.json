@@ -32,8 +32,8 @@
       "via": "rooms"
     },
     "devices": {
-      "collection": "device",
-      "via": "room"
+      "via": "room",
+      "collection": "device"
     }
   }
 }
