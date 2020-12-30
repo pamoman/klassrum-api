@@ -28,8 +28,12 @@
       "via": "devices"
     },
     "model": {
-      "model": "model",
-      "via": "devices"
+      "via": "devices",
+      "model": "model"
+    },
+    "working": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

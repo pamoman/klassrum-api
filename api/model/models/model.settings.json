@@ -42,8 +42,12 @@
       "via": "models"
     },
     "devices": {
-      "via": "model",
-      "collection": "device"
+      "collection": "device",
+      "via": "model"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
