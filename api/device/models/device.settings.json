@@ -11,8 +11,9 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "purchased": {
-      "type": "date"
+    "name": {
+      "type": "string",
+      "default": "Category: Brand Model"
     },
     "serial": {
       "type": "string"
@@ -28,12 +29,15 @@
       "via": "devices"
     },
     "model": {
-      "via": "devices",
-      "model": "model"
+      "model": "model",
+      "via": "devices"
     },
     "working": {
       "type": "boolean",
       "default": true
+    },
+    "purchased": {
+      "type": "date"
     }
   }
 }
