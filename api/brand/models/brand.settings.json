@@ -17,6 +17,10 @@
     "models": {
       "via": "brand",
       "collection": "model"
+    },
+    "furnitures": {
+      "via": "brand",
+      "collection": "furniture"
     }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "furnitures",
+  "info": {
+    "name": "furniture",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "brand": {
+      "model": "brand",
+      "via": "furnitures"
+    },
+    "model": {
+      "type": "string"
+    },
+    "category": {
+      "model": "category",
+      "via": "furnitures"
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dimensions.dimensions"
+    },
+    "documentation": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

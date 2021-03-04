@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_dimensions_dimensions",
+  "info": {
+    "name": "dimensions",
+    "icon": "border-all"
+  },
+  "options": {},
+  "attributes": {
+    "l": {
+      "type": "decimal"
+    },
+    "w": {
+      "type": "decimal"
+    },
+    "h": {
+      "type": "decimal"
+    }
+  }
+}

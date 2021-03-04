@@ -25,12 +25,12 @@
       "type": "richtext"
     },
     "room": {
-      "model": "room",
-      "via": "devices"
+      "via": "devices",
+      "model": "room"
     },
     "model": {
-      "model": "model",
-      "via": "devices"
+      "via": "devices",
+      "model": "model"
     },
     "working": {
       "type": "boolean",

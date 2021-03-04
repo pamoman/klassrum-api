@@ -32,8 +32,13 @@
       "via": "rooms"
     },
     "devices": {
-      "via": "room",
-      "collection": "device"
+      "collection": "device",
+      "via": "room"
+    },
+    "furniture": {
+      "type": "component",
+      "repeatable": true,
+      "component": "furniture.furniture"
     }
   }
 }

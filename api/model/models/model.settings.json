@@ -23,7 +23,7 @@
       "type": "richtext"
     },
     "documentation": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "files",
@@ -42,8 +42,8 @@
       "via": "models"
     },
     "devices": {
-      "via": "model",
-      "collection": "device"
+      "collection": "device",
+      "via": "model"
     },
     "approved": {
       "type": "boolean",
