@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colours",
+  "info": {
+    "name": "colour",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "pamo-colorpicker",
+      "columnType": "longtext"
+    }
+  }
+}

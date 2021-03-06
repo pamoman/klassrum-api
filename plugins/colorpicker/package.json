@@ -1,0 +1,29 @@
+{
+  "name": "strapi-plugin-colorpicker",
+  "version": "1.0.0",
+  "description": "A simple colour picker plugin.",
+  "strapi": {
+    "name": "colorpicker",
+    "icon": "plug",
+    "description": "A simple colour picker."
+  },
+  "dependencies": {
+    "react-color": "^2.19.3",
+    "styled-components": "^5.2.1"
+  },
+  "author": {
+    "name": "Paul Moreland",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "Paul Moreland"
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
