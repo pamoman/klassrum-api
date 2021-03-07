@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_styles_styles",
+  "info": {
+    "name": "style",
+    "icon": "border-style"
+  },
+  "options": {},
+  "attributes": {
+    "colour": {
+      "model": "colour"
+    },
+    "fabric": {
+      "model": "fabric"
+    }
+  }
+}

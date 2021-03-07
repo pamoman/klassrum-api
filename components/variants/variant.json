@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_variants_variants",
+  "info": {
+    "name": "variant",
+    "icon": "list-ul",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "furnish": {
+      "type": "component",
+      "repeatable": true,
+      "component": "furnish.furnish"
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dimensions.dimensions"
+    },
+    "name": {
+      "type": "string"
+    },
+    "style": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.style"
+    },
+    "functions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "functions.function"
+    }
+  }
+}

@@ -25,11 +25,6 @@
       "model": "category",
       "via": "furnitures"
     },
-    "dimensions": {
-      "type": "component",
-      "repeatable": false,
-      "component": "dimensions.dimensions"
-    },
     "documentation": {
       "collection": "file",
       "via": "related",
@@ -40,6 +35,11 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "variant": {
+      "type": "component",
+      "repeatable": true,
+      "component": "variants.variant"
     }
   }
 }

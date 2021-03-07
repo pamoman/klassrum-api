@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_furnish_furnishes",
+  "info": {
+    "name": "furnish",
+    "icon": "truck-moving",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "room": {
+      "model": "room"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

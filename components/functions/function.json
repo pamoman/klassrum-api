@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_functions_functions",
+  "info": {
+    "name": "function",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "electric": {
+      "type": "boolean",
+      "default": false
+    },
+    "washable": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

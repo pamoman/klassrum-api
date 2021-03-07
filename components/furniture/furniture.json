@@ -10,9 +10,6 @@
     "name": {
       "type": "string"
     },
-    "furniture": {
-      "model": "furniture"
-    },
     "quantity": {
       "type": "integer"
     }
