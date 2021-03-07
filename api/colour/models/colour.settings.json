@@ -13,11 +13,11 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "color": {
-      "type": "pamo-colorpicker",
-      "columnType": "longtext"
+      "type": "colorpicker",
+      "columnType": "varchar(255)"
     }
   }
 }

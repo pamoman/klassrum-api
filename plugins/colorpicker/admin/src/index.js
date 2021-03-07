@@ -23,7 +23,7 @@ export default (strapi) => {
     trads: {},
   };
 
-  strapi.registerField({ type: 'pamo-colorpicker', Component: ColorPicker });
+  strapi.registerField({ type: 'colorpicker', Component: ColorPicker });
 
   return strapi.registerPlugin(plugin);
 };
