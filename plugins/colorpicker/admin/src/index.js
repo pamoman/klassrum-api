@@ -1,6 +1,7 @@
 import pluginPkg from '../../package.json';
 import ColorPicker from './components/colorPicker/index';
 import pluginId from './pluginId';
+import pluginLogo from "./assets/images/logo.svg";
 
 export default (strapi) => {
   // const pluginDescription = pluginPkg.strapi.description || pluginPkg.description;
@@ -15,10 +16,9 @@ export default (strapi) => {
     initializer: () => null,
     injectedComponents: [],
     isReady: true,
-    leftMenuLinks: [],
-    leftMenuSections: [],
     mainComponent: null,
     name: pluginPkg.strapi.name,
+    pluginLogo,
     preventComponentRendering: false,
     trads: {},
   };

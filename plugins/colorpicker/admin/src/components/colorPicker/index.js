@@ -31,7 +31,6 @@ const Cover = styled.div`
 const defaultColor = "#FFFFFF";
 
 const ColorPicker = ({name, value, onChange}) => {
-  console.log(value);
   const [showPicker, setShowPicker] = useState(false);
   const [color, setColor] = useState(value ? value : defaultColor);
 
