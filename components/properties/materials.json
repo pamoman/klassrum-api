@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_properties_materials",
+  "info": {
+    "name": "materials",
+    "icon": "chess-board"
+  },
+  "options": {},
+  "attributes": {
+    "materials": {
+      "collection": "material"
+    }
+  }
+}

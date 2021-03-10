@@ -34,6 +34,10 @@
     "devices": {
       "collection": "device",
       "via": "room"
+    },
+    "package": {
+      "via": "room",
+      "model": "package"
     }
   }
 }

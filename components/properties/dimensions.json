@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_dimensions_dimensions",
+  "collectionName": "components_properties_dimensions",
   "info": {
     "name": "dimensions",
-    "icon": "border-all"
+    "icon": "th-list"
   },
   "options": {},
   "attributes": {

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_properties_options",
+  "info": {
+    "name": "options",
+    "icon": "toggle-on"
+  },
+  "options": {},
+  "attributes": {
+    "electric": {
+      "type": "boolean"
+    }
+  }
+}

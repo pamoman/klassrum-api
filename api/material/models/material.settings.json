@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "fabrics",
+  "collectionName": "materials",
   "info": {
-    "name": "fabric"
+    "name": "material"
   },
   "options": {
     "increments": true,

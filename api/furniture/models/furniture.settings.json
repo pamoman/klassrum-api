@@ -36,10 +36,9 @@
       "plugin": "upload",
       "required": false
     },
-    "variant": {
-      "type": "component",
-      "repeatable": true,
-      "component": "variants.variant"
+    "variants": {
+      "via": "furniture",
+      "collection": "variant"
     }
   }
 }

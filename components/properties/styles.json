@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_properties_styles",
+  "info": {
+    "name": "styles",
+    "icon": "border-style",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "colours": {
+      "collection": "colour"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "packages",
+  "info": {
+    "name": "Furniture package",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "room": {
+      "model": "room",
+      "via": "package"
+    },
+    "furniture": {
+      "type": "component",
+      "repeatable": true,
+      "component": "furnish.furniture"
+    }
+  }
+}

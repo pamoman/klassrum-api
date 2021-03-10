@@ -1,14 +1,16 @@
 {
-  "collectionName": "components_furniture_furnitures",
+  "collectionName": "components_furnish_furnitures",
   "info": {
     "name": "furniture",
-    "icon": "chair",
-    "description": ""
+    "icon": "truck-moving"
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "variant": {
+      "model": "variant"
     },
     "quantity": {
       "type": "integer"
