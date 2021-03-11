@@ -22,9 +22,9 @@
     "life_expectancy": {
       "type": "integer"
     },
-    "furnitures": {
+    "furniture_models": {
       "via": "category",
-      "collection": "furniture"
+      "collection": "furniture-model"
     }
   }
 }

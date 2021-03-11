@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/furnitures",
-      "handler": "furniture.find",
+      "path": "/furniture-models",
+      "handler": "furniture-model.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/furnitures/count",
-      "handler": "furniture.count",
+      "path": "/furniture-models/count",
+      "handler": "furniture-model.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/furnitures/:id",
-      "handler": "furniture.findOne",
+      "path": "/furniture-models/:id",
+      "handler": "furniture-model.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/furnitures",
-      "handler": "furniture.create",
+      "path": "/furniture-models",
+      "handler": "furniture-model.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/furnitures/:id",
-      "handler": "furniture.update",
+      "path": "/furniture-models/:id",
+      "handler": "furniture-model.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/furnitures/:id",
-      "handler": "furniture.delete",
+      "path": "/furniture-models/:id",
+      "handler": "furniture-model.delete",
       "config": {
         "policies": []
       }

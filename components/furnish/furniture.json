@@ -2,18 +2,19 @@
   "collectionName": "components_furnish_furnitures",
   "info": {
     "name": "furniture",
-    "icon": "truck-moving"
+    "icon": "truck-moving",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string"
     },
-    "variant": {
-      "model": "variant"
-    },
     "quantity": {
       "type": "integer"
+    },
+    "furniture_variant": {
+      "model": "furniture-variant"
     }
   }
 }

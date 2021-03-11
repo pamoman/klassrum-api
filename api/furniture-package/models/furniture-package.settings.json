@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "packages",
+  "collectionName": "furniture_packages",
   "info": {
-    "name": "Furniture package",
+    "name": "furniture package",
     "description": ""
   },
   "options": {
@@ -11,14 +11,14 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "room": {
-      "model": "room",
-      "via": "package"
-    },
     "furniture": {
       "type": "component",
       "repeatable": true,
       "component": "furnish.furniture"
+    },
+    "room": {
+      "model": "room",
+      "via": "furniture_package"
     }
   }
 }

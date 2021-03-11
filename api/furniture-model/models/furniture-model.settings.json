@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "furnitures",
+  "collectionName": "furniture_models",
   "info": {
-    "name": "furniture",
+    "name": "furniture model",
     "description": ""
   },
   "options": {
@@ -12,20 +12,21 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
-    },
-    "brand": {
-      "model": "brand",
-      "via": "furnitures"
+      "type": "string",
+      "default": "Category: Brand Model"
     },
     "model": {
       "type": "string"
     },
     "category": {
       "model": "category",
-      "via": "furnitures"
+      "via": "furniture_models"
     },
-    "documentation": {
+    "brand": {
+      "model": "brand",
+      "via": "furniture_models"
+    },
+    "media": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -36,9 +37,9 @@
       "plugin": "upload",
       "required": false
     },
-    "variants": {
-      "via": "furniture",
-      "collection": "variant"
+    "furniture_variants": {
+      "via": "furniture_model",
+      "collection": "furniture-variant"
     }
   }
 }

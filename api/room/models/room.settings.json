@@ -35,9 +35,9 @@
       "collection": "device",
       "via": "room"
     },
-    "package": {
+    "furniture_package": {
       "via": "room",
-      "model": "package"
+      "model": "furniture-package"
     }
   }
 }

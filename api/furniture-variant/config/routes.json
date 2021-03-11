@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/variants",
-      "handler": "variant.find",
+      "path": "/furniture-variants",
+      "handler": "furniture-variant.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/variants/count",
-      "handler": "variant.count",
+      "path": "/furniture-variants/count",
+      "handler": "furniture-variant.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/variants/:id",
-      "handler": "variant.findOne",
+      "path": "/furniture-variants/:id",
+      "handler": "furniture-variant.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/variants",
-      "handler": "variant.create",
+      "path": "/furniture-variants",
+      "handler": "furniture-variant.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/variants/:id",
-      "handler": "variant.update",
+      "path": "/furniture-variants/:id",
+      "handler": "furniture-variant.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/variants/:id",
-      "handler": "variant.delete",
+      "path": "/furniture-variants/:id",
+      "handler": "furniture-variant.delete",
       "config": {
         "policies": []
       }

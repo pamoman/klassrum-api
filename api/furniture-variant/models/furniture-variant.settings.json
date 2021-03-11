@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "variants",
+  "collectionName": "furniture_variants",
   "info": {
-    "name": "Furniture variant",
+    "name": "furniture variant",
     "description": ""
   },
   "options": {
@@ -12,20 +12,21 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "default": "Category: Brand Model +"
     },
     "properties": {
       "type": "dynamiczone",
       "components": [
         "properties.dimensions",
-        "properties.styles",
         "properties.materials",
-        "properties.options"
+        "properties.options",
+        "properties.styles"
       ]
     },
-    "furniture": {
-      "model": "furniture",
-      "via": "variants"
+    "furniture_model": {
+      "model": "furniture-model",
+      "via": "furniture_variants"
     }
   }
 }
