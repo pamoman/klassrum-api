@@ -5,50 +5,55 @@
  * to customize this model
  */
 
-const renameFurnitureVariant = async (result) => {
+/**
+ * Rename the furniture variant using its model and properties.
+ */
+const renameFurnitureVariant = async (data) => {
     try {
-        const id = result.id,
-            model = result.furniture_model.name,
-            props = result.properties,
-            names = [model];
+        const props = data.properties,
+              names = [];
 
-        if (props.length > 0) {
-            props.map(prop => {
-                let component = prop.__component;
+        if ('furniture_model' in data && data.furniture_model) {
+            let id = data.furniture_model;
+            let model = await strapi.query('furniture-model').findOne({ id }, 'furniture-model');
 
-                switch (component) {
-                    case 'properties.dimensions':
-                        names.push(prop.l);
-
-                        break;
-                    case 'properties.materials':
-                        names.push(prop.materials[0].name);
-
-                        break;
-                    case 'properties.styles':
-                        names.push(prop.colours[0].name);
-
-                        break;
-                    case 'properties.options':
-                        let electric = prop.electric;
-
-                        electric && names.push('El');
-
-                        break;
-                    default: 
-                        return null;
-                }
-            });
+            names.push(model.name);
         }
 
-        let name = names.join(' ');
+        if (props.length) {
+            await Promise.all(
+                props.map(async prop => {
+                    let component = prop.__component;
 
-        await strapi.query('furniture-variant').update(
-            { id },
-            { name }
-        );
+                    switch (component) {
+                        case 'properties.dimensions':
+                            names.push(prop.l);
 
-        return true;
+                            break;
+                        case 'properties.materials':
+                            let material = await strapi.query('material').findOne({ id: prop.materials[0] });
+
+                            names.push(material.name);
+
+                            break;
+                        case 'properties.styles':
+                            let colour = await strapi.query('colour').findOne({ id: prop.colours[0] });
+
+                            names.push(colour.name);
+
+                            break;
+                        case 'properties.options':
+                            prop.electric && names.push('El');
+
+                            break;
+                        default: 
+                            return null;
+                    }
+                })
+            )
+        }
+
+        data.name = names.join(' ');
     } catch (err) {
         console.error(err);
     }
@@ -59,11 +64,11 @@ module.exports = {
      * Triggered after furniture variants creation.
      */
     lifecycles: {
-        async afterCreate(result) {
-            await renameFurnitureVariant(result);
+        async beforeCreate(data) {
+            await renameFurnitureVariant(data);
         },
-        async afterUpdate(result, _, data) {
-            'updated_by' in data && await renameFurnitureVariant(result);
+        async beforeUpdate(_, data) {
+            await renameFurnitureVariant(data);
         }
     },
 };

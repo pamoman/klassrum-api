@@ -8,7 +8,8 @@
   "options": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "default": "Furniture variant - qty"
     },
     "quantity": {
       "type": "integer"
