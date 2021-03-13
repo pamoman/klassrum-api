@@ -5,28 +5,33 @@
  * to customize this model
  */
 
-const constructDeviceName = async (result) => {
-    const id = result.id,
-          device = await strapi.query("device").findOne({ id }, ["model", "model.brand", "model.category"]);
+/* 
+ * Rename the model device
+ */
+const renameDevice = async (data) => {
+    if ('model' in data) {
+        const id = data.model,
+              res = await Promise.all([strapi.query('model').findOne({ id }, ['brand', 'brand.name', 'category', 'category.name'])]);
+    
+        const model = res[0],
+              modelName = model.name,
+              category = model.category.name,
+              brand = model.brand.name;
 
-    const brand = device.model.brand.name,
-          category = device.model.category.name,
-          model = device.model.name,
-          deviceName = `${category}: ${brand} ${model}`;
-
-    await strapi.query('device').update(
-        { id },
-        { name: deviceName }
-    );
+        data.name = `${category}: ${brand} ${modelName}`;
+    }
 };
 
 module.exports = {
     /**
-     * Triggered after device creation.
+     * Triggered before device creation and update.
      */
     lifecycles: {
-        async afterCreate(result) {
-            await constructDeviceName(result);
+        async beforeCreate(data) {
+            await renameDevice(data);
         },
+        async beforeUpdate(_, data) {
+            await renameDevice(data);
+        }
     },
 };
