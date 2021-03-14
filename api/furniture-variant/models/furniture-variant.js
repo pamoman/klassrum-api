@@ -59,15 +59,23 @@ const renameFurnitureVariant = async (data) => {
     }
 };
 
+const check = (data) => {
+    if (!'furniture_model' in data || !data.furniture_model) {
+        throw strapi.errors.badRequest('Furniture model required!')
+    }
+}
+
 module.exports = {
     /**
-     * Triggered after furniture variants creation.
+     * Triggered before furniture variation create and update.
      */
     lifecycles: {
         async beforeCreate(data) {
+            check(data);
             await renameFurnitureVariant(data);
         },
         async beforeUpdate(_, data) {
+            check(data);
             await renameFurnitureVariant(data);
         }
     },

@@ -24,7 +24,7 @@ const renamePackageFurniture = async (data) => {
 
 module.exports = {
     /**
-     * Triggered after furniture package creation.
+     * Triggered before furniture package create and update.
      */
     lifecycles: {
         async beforeCreate(data) {

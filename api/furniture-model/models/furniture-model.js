@@ -30,15 +30,27 @@ const renameFurnitureModel = async (data) => {
     data.name = `${category}: ${brand} ${model}`;
 }
 
+const check = (data) => {
+    if (!'category' in data || !data.category) {
+        throw strapi.errors.badRequest('Category required!')
+    }
+
+    if (!'brand' in data || !data.brand) {
+        throw strapi.errors.badRequest('Brand required!')
+    }
+}
+
 module.exports = {
     /**
-     * Triggered after furniture model creation.
+     * Triggered before furniture model create and update.
      */
     lifecycles: {
         async beforeCreate(data) {
+            check(data);
             await renameFurnitureModel(data);
         },
         async beforeUpdate(_, data) {
+            check(data);
             await renameFurnitureModel(data);
         }
     },

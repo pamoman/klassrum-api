@@ -16,7 +16,8 @@
       "default": "Category: Brand Model"
     },
     "model": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "category": {
       "model": "category",
@@ -38,8 +39,8 @@
       "required": false
     },
     "furniture_variants": {
-      "via": "furniture_model",
-      "collection": "furniture-variant"
+      "collection": "furniture-variant",
+      "via": "furniture_model"
     }
   }
 }

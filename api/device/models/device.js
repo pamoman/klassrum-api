@@ -22,15 +22,23 @@ const renameDevice = async (data) => {
     }
 };
 
+const check = (data) => {
+    if (!'model' in data || !data.model) {
+        throw strapi.errors.badRequest('Model required!')
+    }
+}
+
 module.exports = {
     /**
-     * Triggered before device creation and update.
+     * Triggered before device create and update.
      */
     lifecycles: {
         async beforeCreate(data) {
+            check(data);
             await renameDevice(data);
         },
         async beforeUpdate(_, data) {
+            check(data);
             await renameDevice(data);
         }
     },

@@ -12,7 +12,8 @@
       "default": "Furniture variant - qty"
     },
     "quantity": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "furniture_variant": {
       "model": "furniture-variant"

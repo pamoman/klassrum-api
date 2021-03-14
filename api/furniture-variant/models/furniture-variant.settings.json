@@ -13,7 +13,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "default": "Category: Brand Model +"
+      "default": "Category: Brand Model Properties"
     },
     "properties": {
       "type": "dynamiczone",
@@ -25,8 +25,8 @@
       ]
     },
     "furniture_model": {
-      "model": "furniture-model",
-      "via": "furniture_variants"
+      "via": "furniture_variants",
+      "model": "furniture-model"
     }
   }
 }
