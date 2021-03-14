@@ -5,17 +5,29 @@
  * to customize this model
  */
 
-const renameFurnitureModel = async (result) => {
-    const id = result.id,
-          category = result.category.name,
-          brand = result.brand.name,
-          model = result.model,
-          name = `${category}: ${brand} ${model}`;
+ /* 
+  * Rename furniture model using relations
+  */
+const renameFurnitureModel = async (data) => {
+    const model = data.model;
 
-    await strapi.query('furniture-model').update(
-        { id },
-        { name }
-    );
+    let category = "", brand = "";
+
+    if ('category' in data && data.category) {
+        const categoryID = data.category;
+        const categoryRes = await strapi.query('category').findOne({ id: categoryID }, ['category']);
+
+        category = categoryRes.name;
+    }
+
+    if ('brand' in data && data.brand) {
+        const brandID = data.brand;
+        const brandRes = await strapi.query('brand').findOne({ id: brandID }, ['brand']);
+
+        brand = brandRes.name;
+    }
+
+    data.name = `${category}: ${brand} ${model}`;
 }
 
 module.exports = {
@@ -23,8 +35,11 @@ module.exports = {
      * Triggered after furniture model creation.
      */
     lifecycles: {
-        async afterCreate(result) {
-            await renameFurnitureModel(result);
+        async beforeCreate(data) {
+            await renameFurnitureModel(data);
         },
+        async beforeUpdate(_, data) {
+            await renameFurnitureModel(data);
+        }
     },
 };

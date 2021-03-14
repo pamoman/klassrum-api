@@ -6,10 +6,10 @@
  */
 
 /* 
- * Rename the model device
+ * Rename the model device using relations
  */
 const renameDevice = async (data) => {
-    if ('model' in data) {
+    if ('model' in data && data.model) {
         const id = data.model,
               res = await Promise.all([strapi.query('model').findOne({ id }, ['brand', 'brand.name', 'category', 'category.name'])]);
     
