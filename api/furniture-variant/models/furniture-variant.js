@@ -7,7 +7,7 @@
 
 const check = (data) => {
     if (!'furniture_model' in data || !data.furniture_model) {
-        throw strapi.errors.badRequest('Furniture model required!')
+        throw strapi.errors.badRequest('Furniture model required!');
     }
 }
 
@@ -18,11 +18,11 @@ module.exports = {
     lifecycles: {
         async beforeCreate(data) {
             check(data);
-            data.name = await strapi.config.functions.rename.furniture.variant(data);
+            data.name = await strapi.config.functions.rename.furniture.variant(data.furniture_model, data.properties);
         },
         async beforeUpdate(_, data) {
             check(data);
-            data.name = await strapi.config.functions.rename.furniture.variant(data);
+            data.name = await strapi.config.functions.rename.furniture.variant(data.furniture_model, data.properties);
         }
     },
 };

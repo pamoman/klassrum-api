@@ -1,7 +1,5 @@
 'use strict';
 
-const { sanitizeEntity } = require('strapi-utils');
-
 /**
  * Helper object for renaming fields
  */
@@ -43,57 +41,53 @@ module.exports = {
 
             return `${category}: ${brand} ${data.model}`;
         },
-        variant: async (data) => {
-            const names = [];
+        variant: async (modelID, properties) => {
+            const names = [],
+                  model = await strapi.query('furniture-model').findOne({ id: modelID }, 'furniture-model');
 
-            if ('furniture_model' in data && data.furniture_model) {
-                let id = data.furniture_model;
-                let model = await strapi.query('furniture-model').findOne({ id }, 'furniture-model');
+            names.push(model.name);
 
-                names.push(model.name);
-            }
+            await Promise.all(
+                properties.map(async prop => {
+                    let component = prop.__component;
 
-            if (data.properties.length) {
-                await Promise.all(
-                    data.properties.map(async prop => {
-                        let component = prop.__component;
+                    switch (component) {
+                        case 'properties.dimensions':
+                            names.push(prop.l);
 
-                        switch (component) {
-                            case 'properties.dimensions':
-                                names.push(prop.l);
+                            break;
+                        case 'properties.materials':
+                            let materialID = prop.materials[0],
+                                material = await strapi.query('material').findOne({ id: materialID });
 
-                                break;
-                            case 'properties.materials':
-                                let material = await strapi.query('material').findOne({ id: prop.materials[0] });
+                            names.push(material.name);
 
-                                names.push(material.name);
+                            break;
+                        case 'properties.styles':
+                            let colourID = prop.colours[0],
+                                colour = await strapi.query('colour').findOne({ id: colourID });
 
-                                break;
-                            case 'properties.styles':
-                                let colour = await strapi.query('colour').findOne({ id: prop.colours[0] });
+                            names.push(colour.name);
 
-                                names.push(colour.name);
+                            break;
+                        case 'properties.options':
+                            prop.electric && names.push('El');
 
-                                break;
-                            case 'properties.options':
-                                prop.electric && names.push('El');
-
-                                break;
-                            default: 
-                                return null;
-                        }
-                    })
-                )
-            }
+                            break;
+                        default: 
+                            return null;
+                    }
+                })
+            )
 
             return names.join(' ');
         },
         package: async (furniture) => {
             let id = furniture.furniture_variant;
             let quantity = furniture.quantity;
-            let variant = await strapi.query("furniture-variant").findOne({ id }, ['furniture_variant']);
+            let variant = await strapi.query("furniture-variant").findOne({ id }, ['properties']);
 
             return `${variant.name} - ${quantity}st`;
-        }
+        },
     }
 }
