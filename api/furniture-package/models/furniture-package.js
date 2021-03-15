@@ -5,33 +5,24 @@
  * to customize this model
  */
 
-/** 
- * Rename package furniture
- */
-const renamePackageFurniture = async (data) => {
-    if (data.furniture.length && Object.keys(data.furniture[0]).length) {
-        await Promise.all(
-            data.furniture.map(async f => {
-                let furniture_variant = f.furniture_variant;
-                let quantity = f.quantity;
-                let variant = await strapi.query("furniture-variant").findOne({ id: furniture_variant }, ['furniture_variant']);
-
-                f.name = `${variant.name} - ${quantity}st`;
-            })
-        );
-    }
-};
-
 module.exports = {
     /**
      * Triggered before furniture package create and update.
      */
     lifecycles: {
         async beforeCreate(data) {
-            await renamePackageFurniture(data);
+            if (data.furniture.length && Object.keys(data.furniture[0]).length) {
+                await Promise.all(data.furniture.map(async furniture => {
+                    furniture.name = await strapi.config.functions.rename.furniture.package(furniture);
+                }));
+            }
         },
         async beforeUpdate(_, data) {
-            await renamePackageFurniture(data);
+            if (data.furniture.length && Object.keys(data.furniture[0]).length) {
+                await Promise.all(data.furniture.map(async furniture => {
+                    furniture.name = await strapi.config.functions.rename.furniture.package(furniture);
+                }));
+            }
         }
     },
 };

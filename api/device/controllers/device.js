@@ -5,9 +5,4 @@
  * to customize this controller
  */
 
-module.exports = {
-    // GET /devices/rename
-    async rename() {
-        return await strapi.config.functions.rename.devices();
-    }
-};
+module.exports = {};

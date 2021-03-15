@@ -2,14 +2,6 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/devices/rename",
-      "handler": "device.rename",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/devices",
       "handler": "device.find",
       "config": {
